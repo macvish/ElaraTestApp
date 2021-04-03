@@ -24,7 +24,7 @@ export const CustomList = ({ data }) => {
         renderSectionHeader={renderSectionHeader}
         extraData={data}
         stickySectionHeadersEnabled
-        SectionSeparatorComponent={() => <View style={{ height: 3, backgroundColor: '#D2D2D2' }}></View>}
+        SectionSeparatorComponent={() => <View style={styles.sectionSeparator}></View>}
       />
     </View>
   )
@@ -35,14 +35,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#45caff',
     position: 'absolute',
     alignSelf: 'flex-end',
-    width: 35,
+    width: 30,
     marginTop: 15,
     right: 15,
     borderRadius: 3
   },
 
   sectionHeader: {
-    fontSize: 25,
+    fontSize: 20,
     textAlign: 'center'
+  },
+
+  sectionSeparator: {
+    height: 3,
+    backgroundColor: '#D2D2D2'
   }
 })

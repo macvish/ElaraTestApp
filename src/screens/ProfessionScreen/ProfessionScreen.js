@@ -11,19 +11,14 @@ export const ProfessionScreen = () => {
   const [profession, setProfession] = useState(groupedOccupations)
   const [searchParam, setSearchParam] = useState(null)
 
-  useEffect(() => {
-    console.log(profession)
-  }, [profession])
-
-  const handleSearch = e => {
-    setSearchParam(e)
-    if(e == '')
+  const handleSearch = value => {
+    setSearchParam(value)
+    if (value == '')
     {
       setProfession(groupedOccupations)
     } else {
       setProfession(groupedOccupations)
-      // setProfession(prevState => prevState.filter((value, index) => value.data.name.toLowerCase().match(e.toLowerCase())))
-      console.log(profession.filter((value, index) => value.data.name.toLowerCase().match(e.toLowerCase())))
+      setProfession(prevState => prevState.map(object => ({...object, data: object.data.filter(object => object.name.toLowerCase().match(value.toLowerCase()))})))
     }
   }
 

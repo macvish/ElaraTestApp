@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { TextInput } from 'react-native-paper'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-export const Header = () => {
+export const Header = ({ onSearch, searchValue }) => {
   return (
     <View style={styles.container}>
       <View style={styles.titleView}>
@@ -12,6 +12,8 @@ export const Header = () => {
       </View>
       <TextInput
         style={styles.SearchInput}
+        onChangeText={e => onSearch(e)}
+        value={searchValue}
         left={
           <TextInput.Icon name={() => <Icon name="search" style={styles.searchIcon} />} />
         }
@@ -48,12 +50,12 @@ const styles = StyleSheet.create({
   },
 
   SearchInput: {
-    height: '50%',
+    height: 55,
     marginTop: 10
   },
 
   searchIcon: {
     fontSize: 13,
-    paddingTop: 15
+    paddingTop: 3
   }
 })

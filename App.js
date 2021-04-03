@@ -8,7 +8,7 @@ const App = () => {
     <PaperProvider>
       <ProfessionScreen />
     </PaperProvider>
-  );
-};
+  )
+}
 
 export default App

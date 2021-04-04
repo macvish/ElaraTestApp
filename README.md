@@ -25,8 +25,10 @@ Clone/download project, when done, you'd have to install all the dependancies of
 or
 `yarn install`
 
-### Start Metro
+### Start Project
 `yarn start`
+or
+`react-native start`
 
 ### Start Project on Android
 `yarn android` 

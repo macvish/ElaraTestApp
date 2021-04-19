@@ -20,7 +20,7 @@ This is a react-native app which utilizes react-native `SectionList` component t
 ## Setup
 
 ### Install Dependencies
-Clone/download project, when done, you'd have to install all the dependancies of the project by runing the command on your cmd the follow:
+Clone/download project, when done, you'd have to install all the dependancies of the project by runing the following command on your cmd or terminal:
 `yarn`
 or
 `yarn install`

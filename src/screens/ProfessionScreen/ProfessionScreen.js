@@ -6,8 +6,12 @@ import occupations from '../../helper/occupations.json'
 import { sorter, groupAlpabetically} from '../../helper/constants'
 
 export const ProfessionScreen = () => {
-  const sortedOccupations = occupations.sort((firstValue, secondValue) => sorter(firstValue.name, secondValue.name))
-  const groupedOccupations = Object.values(sortedOccupations.reduce((a, b) => groupAlpabetically(a, b.name, b), {}))
+  const sortedOccupations = occupations.sort(
+    (firstValue, secondValue) => sorter(firstValue.name, secondValue.name)
+  )
+  const groupedOccupations = Object.values(
+    sortedOccupations.reduce((a, b) => groupAlpabetically(a, b.name, b), {}))
+  )
   const [profession, setProfession] = useState(groupedOccupations)
   const [searchParam, setSearchParam] = useState(null)
 
@@ -18,7 +22,12 @@ export const ProfessionScreen = () => {
       setProfession(groupedOccupations)
     } else {
       setProfession(groupedOccupations)
-      setProfession(prevState => prevState.map(object => ({...object, data: object.data.filter(object => object.name.toLowerCase().match(value.toLowerCase()))})))
+      setProfession(prevState => prevState.map(object => ({
+        ...object, 
+        data: object.data.filter(
+          object => object.name.toLowerCase().match(value.toLowerCase())
+        )
+      })))
     }
   }
 
